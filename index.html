@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Copuchat · La primera IA hecha por y para Latinoamérica</title>
+<meta name="description" content="Latam-GPT, la primera IA abierta hecha por y para Latinoamérica, ya existe y habla como nosotros. Pruébala gratis en Copuchat y súmate al proyecto.">
+<meta property="og:title" content="Copuchat · La primera IA hecha por y para Latinoamérica ya existe">
+<meta property="og:description" content="Y habla como nosotros. Pruébala gratis en Copuchat y súmate a Latam-GPT.">
+<meta property="og:image" content="img/mujer-celular.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0A0C12">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M6 9.5C6 7.6 7.6 6 9.5 6h21C32.4 6 34 7.6 34 9.5v14c0 1.9-1.6 3.5-3.5 3.5H18l-8 7v-7h-.5C7.6 27 6 25.4 6 23.5v-14Z' fill='%23F0217A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Space+Mono:wght@400;700&amp;family=Orbitron:wght@800;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'DM Sans',system-ui,sans-serif;background:#0A0C12;color:#F2F3F7}
+h1,h2{font-family:'Plus Jakarta Sans','DM Sans',sans-serif;text-wrap:balance}
+h3{font-family:'Plus Jakarta Sans','DM Sans',sans-serif}
+a{color:#FF5C9E}a:hover{color:#FF8CBA}
+@keyframes cpUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes cpPop{0%{opacity:0;transform:scale(.7) translateY(24px)}70%{opacity:1;transform:scale(1.03)}100%{opacity:1;transform:none}}
+@keyframes cpFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes cpHero{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.cp-hero{animation:cpHero .9s cubic-bezier(.2,.7,.2,1) both}
+.cp-hero-2{animation:cpHero .9s .15s cubic-bezier(.2,.7,.2,1) both}
+.cp-hero-3{animation:cpHero .9s .3s cubic-bezier(.2,.7,.2,1) both}
+.cp-float{animation:cpFloat 5s ease-in-out infinite}
+.cp-float-2{animation:cpFloat 6s 1.2s ease-in-out infinite}
+@supports (animation-timeline: view()){
+.cp-rv{animation:cpUp linear both;animation-timeline:view();animation-range:entry 0% cover 28%}
+.cp-pop{animation:cpPop linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+.cp-pop-2{animation:cpPop linear both;animation-timeline:view();animation-range:entry 8% cover 36%}
+.cp-pop-3{animation:cpPop linear both;animation-timeline:view();animation-range:entry 16% cover 42%}
+}
+@media (max-width: 1100px){.r-nav{display:none!important}}
+@media (max-width: 900px){
+.r-pad{padding-left:20px!important;padding-right:20px!important}
+.r-v{padding-top:64px!important;padding-bottom:64px!important}
+.r-header{padding:14px 16px!important}
+.r-stack{display:flex!important;flex-direction:column!important;gap:28px!important}
+.r-g2{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.r-g1{grid-template-columns:minmax(0,1fr)!important}
+.r-colhead{flex-direction:column!important;align-items:flex-start!important;gap:20px!important}
+.r-wrap{flex-wrap:wrap!important}
+.r-center{justify-content:center!important;row-gap:10px!important}
+.r-sumate{margin:0!important;padding:0 16px 64px!important;border-radius:40px 40px 0 0!important}
+.r-form{width:100%!important;display:flex!important;flex-direction:column!important;margin-top:-100px!important}
+.r-formimg{min-height:260px!important}
+.r-inner{padding:28px 22px!important}
+.r-webimg{min-height:240px!important}
+.r-heroimg{min-height:400px!important}
+.r-footer{flex-direction:column!important;align-items:flex-start!important;gap:20px!important;padding:28px 20px!important}
+.r-scroll{overflow-x:auto!important;-webkit-overflow-scrolling:touch}
+.r-table{min-width:760px}
+h2{font-size:32px!important;letter-spacing:-0.5px!important}
+.r-h1{font-size:40px!important;letter-spacing:-0.8px!important}
+.r-lead{font-size:20px!important}
+.r-formula{font-size:22px!important;flex-wrap:wrap!important;justify-content:center!important;gap:10px!important}
+.r-formula span{padding:10px 16px!important}
+.r-bub1{left:12px!important;top:16px!important;max-width:230px!important}
+.r-bub2{right:12px!important;bottom:16px!important;max-width:250px!important}
+.r-badge{right:12px!important}
+.r-tabs{flex-wrap:wrap!important;justify-content:center!important;max-width:100%}
+.r-webnum{font-size:64px!important}
+.r-tagrow{flex-wrap:wrap!important}
+}
+@media (max-width: 600px){
+.r-g2,.r-g1m{grid-template-columns:minmax(0,1fr)!important}
+.r-h1{font-size:33px!important}
+h2{font-size:27px!important}
+.r-hidem{display:none!important}
+.r-btns{flex-direction:column!important;align-items:stretch!important;width:100%}
+.r-btns > a{justify-content:center!important}
+.r-chatpos{right:14px!important;bottom:14px!important}
+.r-chat{width:calc(100vw - 28px)!important}
+.r-tabs button{flex-grow:1}
+.r-formula{font-size:18px!important}
+}
+@media (prefers-reduced-motion: reduce){.cp-rv,.cp-pop,.cp-pop-2,.cp-pop-3,.cp-hero,.cp-hero-2,.cp-hero-3,.cp-float,.cp-float-2{animation:none!important}}
+
+[hidden]{display:none!important}
+.tabbtn{min-height:48px;padding:0 22px;border:0;border-radius:12px;cursor:pointer;font-size:15px;font-weight:600;font-family:inherit;color:#C9CEDA;background:transparent}
+.tabbtn.on{color:#fff;background:#F0217A}
+.webdot span{display:block;height:10px;width:10px;border-radius:999px;background:#3A4156;transition:width .2s}
+.webdot.on span{width:36px;background:#F0217A}
+.faq{border-radius:18px;background:#11141E;border:1px solid #232939}
+.faq.open{background:#161A27;border-color:#F0217A}
+.faqicon{flex-shrink:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:10px;font-size:20px;color:#fff;transition:transform .2s;background:#1C2130}
+.faq.open .faqicon{background:#F0217A;transform:rotate(45deg)}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+img{max-width:100%}
+</style>
+</head>
+<body>
+<div style="position: relative; width: 100%; min-height: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #0A0C12; color: #F2F3F7; font-family: 'DM Sans', system-ui, sans-serif">
+
+<div style="display: flex; flex-direction: column; background: radial-gradient(circle at 10% 4%, rgba(240,33,122,0.3), rgba(240,33,122,0) 32%), radial-gradient(circle at 90% 30%, rgba(122,27,69,0.5), rgba(122,27,69,0) 34%), #0A0C12">
+<header class="r-header" style="display: flex; align-items: center; justify-content: space-between; padding: 22px 96px">
+<div style="display: flex; align-items: center; gap: 10px">
+<svg width="36" height="36" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M6 9.5C6 7.6 7.6 6 9.5 6h21C32.4 6 34 7.6 34 9.5v14c0 1.9-1.6 3.5-3.5 3.5H18l-8 7v-7h-.5C7.6 27 6 25.4 6 23.5v-14Z" fill="#F0217A"></path><circle cx="14" cy="16.5" r="2.4" fill="#FFFFFF"></circle><circle cx="20" cy="16.5" r="2.4" fill="#FFFFFF"></circle><circle cx="26" cy="16.5" r="2.4" fill="#FFFFFF"></circle></svg>
+<div style="display: flex; flex-direction: column"><span style="font-family: 'Orbitron', sans-serif; font-size: 22px; font-weight: 900; letter-spacing: 0.5px; color: #F0217A">COPUCHAT</span><span style="font-size: 12px; color: #A7AEBD">Impulsada por Latam-GPT</span></div>
+</div>
+<nav class="r-nav" style="display: flex; align-items: center; gap: 26px; font-size: 15px; font-weight: 500">
+<a href="#por-que" style="color: #F2F3F7; text-decoration: none">Por qué</a>
+<a href="#usos" style="color: #F2F3F7; text-decoration: none">Usos</a>
+<a href="#que-es-copuchat" style="color: #F2F3F7; text-decoration: none">¿Qué es Copuchat?</a>
+<a href="#comparativa" style="color: #F2F3F7; text-decoration: none">Comparativa</a>
+<a href="#videos" style="color: #F2F3F7; text-decoration: none">Videos</a>
+<a href="#faq" style="color: #F2F3F7; text-decoration: none">Preguntas</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 10px">
+<a class="r-hidem" href="https://www.youtube.com/@CEN_IA" target="_blank" rel="noopener" aria-label="Canal de YouTube de CENIA" style="display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 16px; border-radius: 12px; border: 1px solid #3A4156; color: #F2F3F7; text-decoration: none; font-size: 14px; font-weight: 600"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4.5" fill="#FF0033"></rect><path d="M10 9.2v5.6l4.8-2.8L10 9.2Z" fill="#FFFFFF"></path></svg>YouTube</a>
+<a href="#sumate" style="display: inline-flex; align-items: center; min-height: 46px; padding: 0 22px; border-radius: 12px; background: #F0217A; color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 600">Súmate</a>
+</div>
+</header>
+
+<section class="r-pad" style="display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 48px 96px 0; text-align: center">
+<span class="cp-hero r-tagrow" style="display: inline-flex; align-items: center; gap: 10px; padding: 6px 16px 6px 6px; border-radius: 999px; background: #161A27; border: 1px solid #232939; font-size: 14px; font-weight: 600"><span style="padding: 4px 12px; border-radius: 999px; background: #F0217A; color: #FFFFFF">Una IA con acento propio</span>Hecha en 15 países de la región</span>
+<h1 class="cp-hero r-h1" style="margin: 0; max-width: 1100px; font-size: 68px; line-height: 1.08; font-weight: 800; letter-spacing: -1.6px">La primera IA hecha por y para Latinoamérica <span style="padding: 0 14px; border-radius: 18px; background: #F0217A">ya existe</span></h1>
+<p class="cp-hero-2 r-lead" style="margin: 0; font-size: 24px; font-weight: 500; color: #A7AEBD">Y habla como nosotros.</p>
+<div class="cp-hero-2 r-btns" style="display: flex; gap: 14px; margin-top: 4px">
+<a href="https://copuchat.latamgpt.org/?utm_source=landing&amp;utm_medium=web&amp;utm_campaign=ia-acento-propio&amp;utm_content=hero" style="display: inline-flex; align-items: center; gap: 10px; min-height: 58px; padding: 0 28px; border-radius: 14px; background: #F0217A; color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 600">Pruébala en Copuchat
+<svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+<a href="#sumate" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 26px; border-radius: 14px; border: 1px solid #3A4156; color: #F2F3F7; text-decoration: none; font-size: 16px; font-weight: 600">Súmate al proyecto</a>
+</div>
+</section>
+
+<section class="r-pad r-stack" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px; align-items: stretch; padding: 56px 96px 72px">
+<div class="cp-hero-3 r-heroimg" style="grid-column: span 7; position: relative; min-height: 460px">
+<div style="position: absolute; inset: 0; border-radius: 28px; overflow: hidden; border: 1px solid #232939"><img src="img/mujer-celular.jpg" alt="Joven sonriendo mientras conversa con la IA en su celular" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block"></div>
+<div class="cp-float r-bub1" style="position: absolute; left: -24px; top: 48px; max-width: 280px; padding: 14px 16px; border-radius: 18px 18px 18px 4px; background: #11141E; border: 1px solid #232939; box-shadow: 0 16px 36px rgba(0,0,0,0.5)"><span style="display: block; font-family: 'Space Mono', monospace; font-size: 11px; color: #8B93A5">TÚ</span><span style="font-size: 15px; font-weight: 500">¿Qué significa “ahorita” en México?</span></div>
+<div class="cp-float-2 r-bub2" style="position: absolute; right: -24px; bottom: 44px; max-width: 320px; padding: 14px 16px; border-radius: 18px 18px 4px 18px; background: #2A0E1D; border: 1px solid #F0217A; box-shadow: 0 16px 36px rgba(0,0,0,0.5)"><span style="display: block; font-family: 'Space Mono', monospace; font-size: 11px; color: #FF5C9E">LATAM-GPT</span><span style="font-size: 15px; line-height: 1.5">Puede ser “ya mismo”… o “en un rato largo”. Depende del tono y de quién lo diga.</span></div>
+</div>
+<div class="cp-hero-3 r-inner" style="grid-column: span 5; display: flex; flex-direction: column; justify-content: center; gap: 20px; padding: 40px 36px; border-radius: 28px; background: #11141E; border: 1px solid #232939">
+<span style="font-family: 'Space Mono', monospace; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; font-weight: 700; color: #FF5C9E">Conócela · Úsala · Súmate</span>
+<p style="margin: 0; font-size: 18px; line-height: 1.65; color: #C9CEDA">Latam-GPT no es una IA más grande ni más rápida: es la primera entrenada para entender cómo hablamos, pensamos y contamos nuestra historia.</p>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; gap: 12px; align-items: flex-start"><span style="flex-shrink: 0; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: #2A0E1D"><svg width="16" height="16" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="m5 11.5 4 4 8-9" stroke="#F0217A" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 15px; line-height: 1.55"><strong>Entiende el sentido</strong>, no solo el idioma: contexto, humor e historia.</span></div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><span style="flex-shrink: 0; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: #2A0E1D"><svg width="16" height="16" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="m5 11.5 4 4 8-9" stroke="#F0217A" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 15px; line-height: 1.55"><strong>Abierta</strong>: un bien público regional, con datos licenciados.</span></div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><span style="flex-shrink: 0; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: #2A0E1D"><svg width="16" height="16" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="m5 11.5 4 4 8-9" stroke="#F0217A" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 15px; line-height: 1.55"><strong>Tu voz la mejora</strong>: cada conversación en Copuchat la afina.</span></div>
+</div>
+<a href="https://copuchat.latamgpt.org/?utm_source=landing&amp;utm_medium=web&amp;utm_campaign=ia-acento-propio&amp;utm_content=propuesta" style="display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; border-radius: 14px; background: #F0217A; color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 600">Pruébala gratis ahora
+<svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+</div>
+</section>
+
+<section class="r-pad r-wrap r-center" style="display: flex; align-items: center; justify-content: center; gap: 28px; padding: 20px 96px; border-top: 1px solid #232939; border-bottom: 1px solid #232939; font-size: 14px; color: #A7AEBD">
+<span>Una alianza de <strong style="color: #F2F3F7">60+ instituciones</strong> en <strong style="color: #F2F3F7">15 países</strong></span>
+<span style="width: 6px; height: 6px; border-radius: 999px; background: #F0217A"></span>
+<span>Liderazgo técnico: <strong style="color: #F2F3F7">CENIA</strong></span>
+<span style="width: 6px; height: 6px; border-radius: 999px; background: #F0217A"></span>
+<span>Con el impulso de <strong style="color: #F2F3F7">MinCiencia</strong>, <strong style="color: #F2F3F7">CAF</strong> y aliados</span>
+</section>
+</div>
+
+<section id="por-que" class="r-pad r-v r-stack" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 48px; align-items: start; padding: 96px">
+<div style="grid-column: span 5; display: flex; flex-direction: column; gap: 22px">
+<span style="font-family: 'Space Mono', monospace; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; font-weight: 700; color: #FF5C9E">El problema</span>
+<h2 class="cp-rv" style="margin: 0; font-size: 44px; line-height: 1.15; font-weight: 800; letter-spacing: -1px">Nos entienden en el idioma, pero no en el <span style="padding: 0 10px; border-radius: 12px; background: #2A0E1D; color: #FF5C9E">sentido</span></h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #A7AEBD">Las IA que usamos a diario se entrenaron sobre todo con datos en inglés. Por eso a veces nos responden “como gringo”: entienden las palabras, pero se les escapa el contexto.</p>
+<div class="cp-rv" style="position: relative; height: 280px; border-radius: 24px; overflow: hidden; border: 1px solid #232939">
+<img loading="lazy" src="img/confundida.jpg" alt="Joven mirando su celular con cara de confusión" style="width: 100%; height: 100%; object-fit: cover; object-position: 30% 30%; display: block">
+<div style="position: absolute; right: 16px; bottom: 16px; display: flex; flex-direction: column; gap: 2px; padding: 14px 18px; border-radius: 16px; background: #11141E; border: 1px solid #232939"><span style="font-family: 'Orbitron', sans-serif; font-size: 28px; font-weight: 800; color: #F0217A">4% + 2%</span><span style="max-width: 210px; font-size: 13px; line-height: 1.45; color: #A7AEBD">Español y portugués en los datos de entrenamiento de las IA globales</span></div>
+</div>
+</div>
+<div style="grid-column: span 7; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; justify-content: space-between"><span style="font-size: 15px; font-weight: 600">Así se nota la diferencia</span><span style="font-size: 12px; color: #8B93A5">Ejemplos ilustrativos</span></div>
+<div class="cp-pop" style="display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 20px; background: #11141E; border: 1px solid #232939">
+<div class="r-tagrow" style="display: flex; align-items: center; gap: 10px"><span style="padding: 4px 12px; border-radius: 999px; background: #2A2412; color: #FFD166; font-size: 12px; font-weight: 600">Modismo · Chile</span><span style="font-size: 16px; font-weight: 600">“¿Qué preparo para la once?”</span></div>
+<div class="r-g1m" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<div style="padding: 14px 16px; border-radius: 14px; background: #1C2130; color: #C9CEDA; font-size: 14px; line-height: 1.55"><span style="display: block; margin-bottom: 4px; font-family: 'Space Mono', monospace; font-size: 11px; color: #8B93A5">IA GENÉRICA</span>¿Te refieres a algo para las 11:00 de la mañana?</div>
+<div style="padding: 14px 16px; border-radius: 14px; background: #2A0E1D; border: 1px solid #F0217A; font-size: 14px; line-height: 1.55"><span style="display: block; margin-bottom: 4px; font-family: 'Space Mono', monospace; font-size: 11px; color: #FF5C9E">LATAM-GPT</span>Para la once, un pan amasado con palta y un tecito nunca fallan.</div>
+</div>
+</div>
+<div class="cp-pop-2" style="display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 20px; background: #11141E; border: 1px solid #232939">
+<div class="r-tagrow" style="display: flex; align-items: center; gap: 10px"><span style="padding: 4px 12px; border-radius: 999px; background: #0F2A2E; color: #45D0D9; font-size: 12px; font-weight: 600">Humor · México</span><span style="font-size: 16px; font-weight: 600">“Ahorita te lo mando, jefe”</span></div>
+<div class="r-g1m" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<div style="padding: 14px 16px; border-radius: 14px; background: #1C2130; color: #C9CEDA; font-size: 14px; line-height: 1.55"><span style="display: block; margin-bottom: 4px; font-family: 'Space Mono', monospace; font-size: 11px; color: #8B93A5">IA GENÉRICA</span>Perfecto, lo recibirá de inmediato.</div>
+<div style="padding: 14px 16px; border-radius: 14px; background: #2A0E1D; border: 1px solid #F0217A; font-size: 14px; line-height: 1.55"><span style="display: block; margin-bottom: 4px; font-family: 'Space Mono', monospace; font-size: 11px; color: #FF5C9E">LATAM-GPT</span>Ese “ahorita” puede ser en cinco minutos… o mañana. Mejor pide una hora.</div>
+</div>
+</div>
+<div class="cp-pop-3" style="display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 20px; background: #11141E; border: 1px solid #232939">
+<div class="r-tagrow" style="display: flex; align-items: center; gap: 10px"><img loading="lazy" src="img/abuela-libro.jpg" alt="" style="width: 34px; height: 34px; border-radius: 999px; object-fit: cover"><span style="padding: 4px 12px; border-radius: 999px; background: #2E1020; color: #FF5C9E; font-size: 12px; font-weight: 600">Historia · Colombia</span><span style="font-size: 16px; font-weight: 600">“Mi abuela vivió el Bogotazo, ¿qué fue?”</span></div>
+<div class="r-g1m" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<div style="padding: 14px 16px; border-radius: 14px; background: #1C2130; color: #C9CEDA; font-size: 14px; line-height: 1.55"><span style="display: block; margin-bottom: 4px; font-family: 'Space Mono', monospace; font-size: 11px; color: #8B93A5">IA GENÉRICA</span>No tengo mucha información sobre ese evento local.</div>
+<div style="padding: 14px 16px; border-radius: 14px; background: #2A0E1D; border: 1px solid #F0217A; font-size: 14px; line-height: 1.55"><span style="display: block; margin-bottom: 4px; font-family: 'Space Mono', monospace; font-size: 11px; color: #FF5C9E">LATAM-GPT</span>El estallido en Bogotá tras el asesinato de Jorge Eliécer Gaitán, el 9 de abril de 1948.</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="usos" class="r-pad r-v" style="display: flex; flex-direction: column; gap: 40px; padding: 96px; background: #0E1119; border-top: 1px solid #232939; border-bottom: 1px solid #232939">
+<div class="r-stack" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 80px; align-items: end">
+<div style="display: flex; flex-direction: column; gap: 14px"><span style="font-family: 'Space Mono', monospace; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; font-weight: 700; color: #FF5C9E">Úsala</span><h2 class="cp-rv" style="margin: 0; font-size: 44px; line-height: 1.15; font-weight: 800; letter-spacing: -1px">Usos reales para tu día a día</h2></div>
+<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #A7AEBD">Para quienes ya usan IA y quieren respuestas que entiendan su realidad.</p>
+</div>
+<div class="r-g2" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px">
+<div class="cp-pop" style="display: flex; flex-direction: column; border-radius: 22px; background: #11141E; border: 1px solid #232939; overflow: hidden"><img loading="lazy" src="img/estudiante.jpg" alt="Estudiante universitario con cuadernos" style="width: 100%; height: 190px; object-fit: cover; object-position: 40% 25%; display: block"><div style="display: flex; flex-direction: column; gap: 12px; padding: 22px"><span style="align-self: flex-start; padding: 4px 12px; border-radius: 999px; background: #2A2412; color: #FFD166; font-size: 13px; font-weight: 600">Estudiantes</span><p style="margin: 0; font-family: 'Space Mono', monospace; font-size: 13.5px; line-height: 1.6">“Ayúdame a estructurar mi tesis sobre migración en Latinoamérica.”</p></div></div>
+<div class="cp-pop-2" style="display: flex; flex-direction: column; border-radius: 22px; background: #11141E; border: 1px solid #232939; overflow: hidden"><img loading="lazy" src="img/dev-codigo.jpg" alt="Desarrolladora con código proyectado" style="width: 100%; height: 190px; object-fit: cover; object-position: 50% 30%; display: block"><div style="display: flex; flex-direction: column; gap: 12px; padding: 22px"><span style="align-self: flex-start; padding: 4px 12px; border-radius: 999px; background: #0F2A2E; color: #45D0D9; font-size: 13px; font-weight: 600">Desarrolladores</span><p style="margin: 0; font-family: 'Space Mono', monospace; font-size: 13.5px; line-height: 1.6">“Clasifica estos comentarios de clientes de Perú según su tono.”</p></div></div>
+<div class="cp-pop-3" style="display: flex; flex-direction: column; border-radius: 22px; background: #11141E; border: 1px solid #232939; overflow: hidden"><img loading="lazy" src="img/conferencia.jpg" alt="Público en una conferencia de innovación" style="width: 100%; height: 190px; object-fit: cover; display: block"><div style="display: flex; flex-direction: column; gap: 12px; padding: 22px"><span style="align-self: flex-start; padding: 4px 12px; border-radius: 999px; background: #2E1020; color: #FF5C9E; font-size: 13px; font-weight: 600">Sector público</span><p style="margin: 0; font-family: 'Space Mono', monospace; font-size: 13.5px; line-height: 1.6">“Explica este trámite en palabras simples para los vecinos de mi comuna.”</p></div></div>
+<div class="cp-pop" style="display: flex; flex-direction: column; border-radius: 22px; background: #11141E; border: 1px solid #232939; overflow: hidden"><img loading="lazy" src="img/equipo.jpg" alt="Equipo emprendedor conversando" style="width: 100%; height: 190px; object-fit: cover; object-position: 60% 30%; display: block"><div style="display: flex; flex-direction: column; gap: 12px; padding: 22px"><span style="align-self: flex-start; padding: 4px 12px; border-radius: 999px; background: #10281C; color: #5CDB95; font-size: 13px; font-weight: 600">Emprendedores</span><p style="margin: 0; font-family: 'Space Mono', monospace; font-size: 13.5px; line-height: 1.6">“Escribe la descripción de mi emprendimiento para clientes de Colombia y México.”</p></div></div>
+</div>
+</section>
+
+<section id="que-es-copuchat" class="r-pad r-v" style="display: flex; flex-direction: column; gap: 32px; padding: 96px; background: radial-gradient(circle at 92% 90%, rgba(240,33,122,0.16), rgba(240,33,122,0) 32%), #0A0C12">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center">
+<span style="font-family: 'Space Mono', monospace; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; font-weight: 700; color: #FF5C9E">Detrás del nombre</span>
+<h2 class="cp-rv" style="margin: 0; font-size: 44px; line-height: 1.15; font-weight: 800; letter-spacing: -1px">¿Qué es <span style="padding: 0 10px; border-radius: 12px; background: #F0217A">Copuchat</span>?</h2>
+<p style="margin: 0; font-size: 17px; color: #A7AEBD">Un nombre con acento chileno para una IA con acento latinoamericano.</p>
+</div>
+<div role="tablist" aria-label="Sobre el nombre Copuchat" class="r-tabs" style="align-self: center; display: flex; gap: 6px; padding: 6px; border-radius: 16px; background: #11141E; border: 1px solid #232939">
+<button type="button" role="tab" data-tab="word" aria-selected="true" class="tabbtn on">La palabra “copucha”</button>
+<button type="button" role="tab" data-tab="name" aria-selected="false" class="tabbtn">¿Por qué Copuchat?</button>
+<button type="button" role="tab" data-tab="countries" aria-selected="false" class="tabbtn">En otros países</button>
+</div>
+<div role="tabpanel" class="cp-rv r-stack r-inner" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px; align-items: center; min-height: 300px; padding: 44px 52px; border-radius: 28px; background: #11141E; border: 1px solid #232939">
+<div data-panel="word" style="display: contents">
+<div style="grid-column: span 5; display: flex; flex-direction: column; gap: 10px; padding: 32px; border-radius: 22px; background: #1C2130">
+<span style="font-size: 13px; font-weight: 600; color: #FF5C9E">Sustantivo femenino · Chile</span>
+<span class="r-webnum" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 58px; font-weight: 800; line-height: 1; letter-spacing: -1.5px">co·pu·cha</span>
+<span style="font-size: 15px; color: #A7AEBD">Y su verbo, <strong style="color: #F2F3F7">copuchar</strong>.</span>
+</div>
+<div style="grid-column: span 7; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px"><h3 style="margin: 0; font-size: 20px; font-weight: 700">En el habla cotidiana</h3><p style="margin: 0; font-size: 16px; line-height: 1.7; color: #C9CEDA">En Chile, una copucha es una novedad o un comentario que se cuenta de manera informal, en confianza. “Copuchar” es ponerse al día conversando, como se hace entre amigos o en la sobremesa.</p></div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 18px 20px; border-radius: 16px; background: #0A0C12; border: 1px solid #232939"><h3 style="margin: 0; font-size: 15px; font-weight: 700">Lo que dice el diccionario (RAE)</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.6; color: #A7AEBD"><strong style="color: #F2F3F7">Copucha</strong> viene de “copa”. En Chile es una vejiga usada para varios fines domésticos y en Bolivia significa mentira.</p>
+<p style="margin: 0; font-size: 14px; line-height: 1.6; color: #A7AEBD"><strong style="color: #F2F3F7">Copuchar</strong> (Chile): difundir noticias exagerando los hechos.</p></div>
+</div>
+</div>
+<div data-panel="name" hidden style="display: contents">
+<div style="grid-column: span 12; display: flex; flex-direction: column; align-items: center; gap: 28px; text-align: center">
+<div class="r-formula" style="display: flex; align-items: center; gap: 18px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 38px; font-weight: 800; letter-spacing: -0.8px">
+<span style="padding: 14px 26px; border-radius: 18px; background: #1C2130">Copucha</span><span style="color: #F0217A">+</span><span style="padding: 14px 26px; border-radius: 18px; background: #1C2130">Chat</span><span style="color: #F0217A">=</span><span style="padding: 14px 26px; border-radius: 18px; background: #F0217A">Copuchat</span>
+</div>
+<p style="margin: 0; max-width: 760px; font-size: 18px; line-height: 1.7; color: #C9CEDA">Copuchat une la conversación informal con el chat de una IA: el espacio para hablar con Latam-GPT tal como conversas en confianza, sin formalidades y con tus propias palabras.</p>
+</div>
+</div>
+<div data-panel="countries" hidden style="display: contents">
+<div style="grid-column: span 12; display: flex; flex-direction: column; gap: 24px">
+<p style="margin: 0; font-size: 18px; line-height: 1.7; color: #C9CEDA; text-align: center">Cada país tiene su propia forma de nombrar esa conversación informal para ponerse al día.</p>
+<div class="r-g2" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 24px; border-radius: 20px; background: #1C2130"><span style="font-size: 13px; font-weight: 600; color: #FFD166">Chile</span><span style="font-size: 26px; font-weight: 700">copucha</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 24px; border-radius: 20px; background: #1C2130"><span style="font-size: 13px; font-weight: 600; color: #45D0D9">México</span><span style="font-size: 26px; font-weight: 700">chisme</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 24px; border-radius: 20px; background: #1C2130"><span style="font-size: 13px; font-weight: 600; color: #FF5C9E">Argentina y Uruguay</span><span style="font-size: 26px; font-weight: 700">chusmerío</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 24px; border-radius: 20px; background: #1C2130"><span style="font-size: 13px; font-weight: 600; color: #5CDB95">Brasil</span><span style="font-size: 26px; font-weight: 700">fofoca</span></div>
+</div>
+<p style="margin: 0; font-size: 16px; text-align: center"><strong>¿Cómo se dice en tu país?</strong> Cuéntaselo a Latam-GPT en Copuchat.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="empieza" class="r-pad r-stack" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 56px; align-items: center; padding: 24px 96px 96px">
+<div class="cp-rv" style="grid-column: span 5; position: relative; height: 420px">
+<div style="position: absolute; inset: 0; border-radius: 28px; overflow: hidden; border: 1px solid #232939"><img loading="lazy" src="img/laptop-pasto.jpg" alt="Joven usando su laptop al aire libre" style="width: 100%; height: 100%; object-fit: cover; object-position: 25% 50%; display: block"></div>
+<div class="cp-float r-badge" style="position: absolute; right: -20px; top: 28px; padding: 12px 16px; border-radius: 14px; background: #11141E; border: 1px solid #F0217A; font-size: 14px; font-weight: 700">Menos de 1 minuto</div>
+</div>
+<div style="grid-column: span 7; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 12px"><span style="font-family: 'Space Mono', monospace; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; font-weight: 700; color: #FF5C9E">Úsala</span><h2 class="cp-rv" style="margin: 0; font-size: 44px; line-height: 1.15; font-weight: 800; letter-spacing: -1px">Pruébala en 3 pasos</h2><p style="margin: 0; font-size: 17px; line-height: 1.7; color: #A7AEBD">Latam-GPT está disponible para conversar en Copuchat, gratis y desde cualquier navegador.</p></div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div class="cp-pop" style="display: flex; gap: 18px; align-items: flex-start; padding: 18px 20px; border-radius: 18px; background: #11141E; border: 1px solid #232939"><span style="flex-shrink: 0; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #2A0E1D; color: #F0217A; font-family: 'Space Mono', monospace; font-size: 17px; font-weight: 700">1</span><div style="display: flex; flex-direction: column; gap: 2px"><h3 style="margin: 0; font-size: 17px; font-weight: 700">Entra a Copuchat</h3><p style="margin: 0; font-size: 15px; line-height: 1.55; color: #A7AEBD">Sin instalar nada, desde tu celular o computador.</p></div></div>
+<div class="cp-pop-2" style="display: flex; gap: 18px; align-items: flex-start; padding: 18px 20px; border-radius: 18px; background: #11141E; border: 1px solid #232939"><span style="flex-shrink: 0; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #2A0E1D; color: #F0217A; font-family: 'Space Mono', monospace; font-size: 17px; font-weight: 700">2</span><div style="display: flex; flex-direction: column; gap: 2px"><h3 style="margin: 0; font-size: 17px; font-weight: 700">Acepta los términos de uso de datos</h3><p style="margin: 0; font-size: 15px; line-height: 1.55; color: #A7AEBD">Tus conversaciones se anonimizan y se usan para mejorar el modelo.</p></div></div>
+<div class="cp-pop-3" style="display: flex; gap: 18px; align-items: flex-start; padding: 18px 20px; border-radius: 18px; background: #11141E; border: 1px solid #232939"><span style="flex-shrink: 0; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #2A0E1D; color: #F0217A; font-family: 'Space Mono', monospace; font-size: 17px; font-weight: 700">3</span><div style="display: flex; flex-direction: column; gap: 2px"><h3 style="margin: 0; font-size: 17px; font-weight: 700">Háblale como hablas y corrígela</h3><p style="margin: 0; font-size: 15px; line-height: 1.55; color: #A7AEBD">Pon a prueba sus respuestas con tus dichos, tu humor y tu historia.</p></div></div>
+</div>
+<div class="r-wrap" style="display: flex; align-items: center; gap: 18px">
+<a href="https://copuchat.latamgpt.org/?utm_source=landing&amp;utm_medium=web&amp;utm_campaign=ia-acento-propio&amp;utm_content=pasos" style="display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 26px; border-radius: 14px; background: #F0217A; color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 600">Pruébala ahora
+<svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+<a href="#webinars" style="font-size: 15px; font-weight: 600">¿Es tu primera vez con IA? Mira los webinars</a>
+</div>
+</div>
+</section>
+
+<section id="comparativa" class="r-pad r-v" style="display: flex; flex-direction: column; gap: 32px; padding: 96px; background: #0E1119; border-top: 1px solid #232939; border-bottom: 1px solid #232939">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center">
+<span style="font-family: 'Space Mono', monospace; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; font-weight: 700; color: #FF5C9E">Comparativa</span>
+<h2 class="cp-rv" style="margin: 0; font-size: 44px; line-height: 1.15; font-weight: 800; letter-spacing: -1px">Copuchat frente a ChatGPT y Gemini</h2>
+<p style="margin: 0; max-width: 720px; font-size: 17px; line-height: 1.7; color: #A7AEBD">No buscamos ser la IA que lo hace todo. Buscamos ser la que mejor entiende a Latinoamérica.</p>
+</div>
+<div class="r-scroll" style="width: 100%">
+<table class="cp-rv r-table" style="width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid #232939; border-radius: 22px; overflow: hidden; font-size: 15px">
+<thead>
+<tr>
+<th scope="col" style="width: 31%; padding: 20px 24px; text-align: left; background: #11141E; font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; color: #8B93A5; border-bottom: 1px solid #232939">Característica</th>
+<th scope="col" style="width: 23%; padding: 20px 24px; text-align: left; background: #2A0E1D; border-bottom: 1px solid #F0217A"><span style="display: block; font-family: 'Orbitron', sans-serif; font-size: 17px; font-weight: 800; color: #F0217A">COPUCHAT</span><span style="font-size: 12px; font-weight: 500; color: #F5D5E3">con Latam-GPT</span></th>
+<th scope="col" style="width: 23%; padding: 20px 24px; text-align: left; background: #11141E; border-bottom: 1px solid #232939"><span style="display: block; font-size: 17px; font-weight: 700">ChatGPT</span><span style="font-size: 12px; font-weight: 500; color: #8B93A5">OpenAI · EE.UU.</span></th>
+<th scope="col" style="width: 23%; padding: 20px 24px; text-align: left; background: #11141E; border-bottom: 1px solid #232939"><span style="display: block; font-size: 17px; font-weight: 700">Gemini</span><span style="font-size: 12px; font-weight: 500; color: #8B93A5">Google · EE.UU.</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row" style="padding: 16px 24px; text-align: left; font-weight: 600; background: #0E1119; border-bottom: 1px solid #1C2130">Entrenada con foco en América Latina y el Caribe</th>
+<td style="padding: 16px 24px; background: #1A0A13; border-bottom: 1px solid #3A1A2B; font-weight: 700; color: #FF8CBA">Sí, con datos de la región</td>
+<td style="padding: 16px 24px; background: #0E1119; color: #C9CEDA; border-bottom: 1px solid #1C2130">No, enfoque global</td>
+<td style="padding: 16px 24px; background: #0E1119; color: #C9CEDA; border-bottom: 1px solid #1C2130">No, enfoque global</td>
+</tr>
+<tr>
+<th scope="row" style="padding: 16px 24px; text-align: left; font-weight: 600; background: #0E1119; border-bottom: 1px solid #1C2130">Dónde se desarrolla</th>
+<td style="padding: 16px 24px; background: #1A0A13; border-bottom: 1px solid #3A1A2B; font-weight: 700; color: #FF8CBA">60+ instituciones de 15 países</td>
+<td style="padding: 16px 24px; background: #0E1119; color: #C9CEDA; border-bottom: 1px solid #1C2130">Estados Unidos</td>
+<td style="padding: 16px 24px; background: #0E1119; color: #C9CEDA; border-bottom: 1px solid #1C2130">Estados Unidos</td>
+</tr>
+<tr>
+<th scope="row" style="padding: 16px 24px; text-align: left; font-weight: 600; background: #0E1119; border-bottom: 1px solid #1C2130">Modelo abierto</th>
+<td style="padding: 16px 24px; background: #1A0A13; border-bottom: 1px solid #3A1A2B; font-weight: 700; color: #FF8CBA">Sí, bien público regional</td>
+<td style="padding: 16px 24px; background: #0E1119; color: #C9CEDA; border-bottom: 1px solid #1C2130">No, propietario</td>
+<td style="padding: 16px 24px; background: #0E1119; color: #C9CEDA; border-bottom: 1px solid #1C2130">No, propietario</td>
+</tr>
+<tr>
+<th scope="row" style="padding: 16px 24px; text-align: left; font-weight: 600; background: #0E1119; border-bottom: 1px solid #1C2130">Datos de entrenamiento</th>
+<td style="padding: 16px 24px; background: #1A0A13; border-bottom: 1px solid #3A1A2B; font-weight: 700; color: #FF8CBA">Licenciados y curados (declarado)</td>
+<td style="padding: 16px 24px; background: #0E1119; color: #C9CEDA; border-bottom: 1px solid #1C2130">Información pública limitada</td>
+<td style="padding: 16px 24px; background: #0E1119; color: #C9CEDA; border-bottom: 1px solid #1C2130">Información pública limitada</td>
+</tr>
+<tr>
+<th scope="row" style="padding: 16px 24px; text-align: left; font-weight: 600; background: #0E1119; border-bottom: 1px solid #1C2130">La comunidad entrena el modelo</th>
+<td style="padding: 16px 24px; background: #1A0A13; border-bottom: 1px solid #3A1A2B; font-weight: 700; color: #FF8CBA">Sí, cada conversación aporta</td>
+<td style="padding: 16px 24px; background: #0E1119; color: #C9CEDA; border-bottom: 1px solid #1C2130">Retroalimentación general</td>
+<td style="padding: 16px 24px; background: #0E1119; color: #C9CEDA; border-bottom: 1px solid #1C2130">Retroalimentación general</td>
+</tr>
+<tr>
+<th scope="row" style="padding: 16px 24px; text-align: left; font-weight: 600; background: #0E1119; border-bottom: 1px solid #1C2130">Tamaño del modelo</th>
+<td style="padding: 16px 24px; background: #1A0A13; border-bottom: 1px solid #3A1A2B; font-weight: 500; color: #F2F3F7">70.000 millones de parámetros</td>
+<td style="padding: 16px 24px; background: #0E1119; color: #C9CEDA; border-bottom: 1px solid #1C2130">No publicado</td>
+<td style="padding: 16px 24px; background: #0E1119; color: #C9CEDA; border-bottom: 1px solid #1C2130">No publicado</td>
+</tr>
+<tr>
+<th scope="row" style="padding: 16px 24px; text-align: left; font-weight: 600; background: #0E1119; border-bottom: 1px solid #1C2130">Conocimiento regional (benchmarks Trueque y Choclo)</th>
+<td style="padding: 16px 24px; background: #1A0A13; border-bottom: 1px solid #3A1A2B; font-weight: 500; color: #F2F3F7">[Resultado oficial]</td>
+<td style="padding: 16px 24px; background: #0E1119; color: #C9CEDA; border-bottom: 1px solid #1C2130">[Resultado oficial]</td>
+<td style="padding: 16px 24px; background: #0E1119; color: #C9CEDA; border-bottom: 1px solid #1C2130">[Resultado oficial]</td>
+</tr>
+<tr>
+<th scope="row" style="padding: 16px 24px; text-align: left; font-weight: 600; background: #0E1119; border-bottom: 1px solid #1C2130">Imágenes, voz y navegación web</th>
+<td style="padding: 16px 24px; background: #1A0A13; border-bottom: 1px solid #3A1A2B; font-weight: 500; color: #F2F3F7">Enfocada en texto</td>
+<td style="padding: 16px 24px; background: #0E1119; color: #C9CEDA; border-bottom: 1px solid #1C2130">Sí</td>
+<td style="padding: 16px 24px; background: #0E1119; color: #C9CEDA; border-bottom: 1px solid #1C2130">Sí</td>
+</tr>
+<tr>
+<th scope="row" style="padding: 16px 24px; text-align: left; font-weight: 600; background: #0E1119; border-bottom: 1px solid #1C2130">Costo para personas</th>
+<td style="padding: 16px 24px; background: #1A0A13; border-bottom: 1px solid #3A1A2B; font-weight: 500; color: #F2F3F7">Gratis en Copuchat</td>
+<td style="padding: 16px 24px; background: #0E1119; color: #C9CEDA; border-bottom: 1px solid #1C2130">Plan gratis y planes pagados</td>
+<td style="padding: 16px 24px; background: #0E1119; color: #C9CEDA; border-bottom: 1px solid #1C2130">Plan gratis y planes pagados</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="margin: 0; font-size: 13px; line-height: 1.6; color: #7D8598">Información pública a septiembre de 2026 (lanzamiento de Latam-GPT, CENIA y CAF). Completar los benchmarks regionales con los resultados oficiales de CENIA antes de difundir. ChatGPT y Gemini son marcas de sus respectivos dueños.</p>
+</section>
+
+<section id="videos" class="r-pad r-v" style="display: flex; flex-direction: column; gap: 36px; padding: 96px">
+<div class="r-colhead" style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 12px"><span style="font-family: 'Space Mono', monospace; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; font-weight: 700; color: #FF5C9E">En video</span><h2 class="cp-rv" style="margin: 0; font-size: 44px; line-height: 1.15; font-weight: 800; letter-spacing: -1px">Míralo con tus propios ojos</h2><p style="margin: 0; font-size: 17px; color: #A7AEBD">Lanzamientos, entrevistas y reportajes sobre Latam-GPT y Copuchat.</p></div>
+<a href="https://www.youtube.com/@CEN_IA" target="_blank" rel="noopener" style="flex-shrink: 0; display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 24px; border-radius: 14px; background: #FF0033; color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 700"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4.5" fill="#FFFFFF"></rect><path d="M10 9.2v5.6l4.8-2.8L10 9.2Z" fill="#FF0033"></path></svg>Ver canal de CENIA en YouTube</a>
+</div>
+<div class="r-g2" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
+<a href="https://www.youtube.com/watch?v=Yxcy6yq0QvU" target="_blank" rel="noopener" class="cp-pop" style="display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; background: #11141E; border: 1px solid #232939; color: #F2F3F7; text-decoration: none">
+<div style="position: relative; aspect-ratio: 16 / 9; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #F0217A 0%, #7A1B45 100%)">
+<span style="position: absolute; left: 16px; top: 16px; padding: 4px 10px; border-radius: 999px; background: rgba(10,12,18,0.75); font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase">Video</span>
+<span style="width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255,255,255,0.95)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="#F0217A"></path></svg></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 18px 20px 20px"><span style="font-size: 13px; font-weight: 600; color: #FF5C9E">Copuchat</span><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 17px; line-height: 1.35; font-weight: 700">Copuchat: la plataforma colaborativa para entrenar a la IA latinoamericana</span></div>
+</a>
+<a href="https://www.youtube.com/watch?v=3EUgH2yp9bQ" target="_blank" rel="noopener" class="cp-pop-2" style="display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; background: #11141E; border: 1px solid #232939; color: #F2F3F7; text-decoration: none">
+<div style="position: relative; aspect-ratio: 16 / 9; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #7A1B45 0%, #11141E 100%)">
+<span style="position: absolute; left: 16px; top: 16px; padding: 4px 10px; border-radius: 999px; background: rgba(10,12,18,0.75); font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase">En vivo</span>
+<span style="width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255,255,255,0.95)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="#F0217A"></path></svg></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 18px 20px 20px"><span style="font-size: 13px; font-weight: 600; color: #FF5C9E">Lanzamiento oficial</span><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 17px; line-height: 1.35; font-weight: 700">Lanzamiento Latam-GPT (transmisión en vivo)</span></div>
+</a>
+<a href="https://www.youtube.com/watch?v=xRJl1koHX6g" target="_blank" rel="noopener" class="cp-pop-3" style="display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; background: #11141E; border: 1px solid #232939; color: #F2F3F7; text-decoration: none">
+<div style="position: relative; aspect-ratio: 16 / 9; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #2A0E1D 0%, #F0217A 100%)">
+<span style="position: absolute; left: 16px; top: 16px; padding: 4px 10px; border-radius: 999px; background: rgba(10,12,18,0.75); font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase">Reportaje</span>
+<span style="width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255,255,255,0.95)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="#F0217A"></path></svg></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 18px 20px 20px"><span style="font-size: 13px; font-weight: 600; color: #FF5C9E">24 Horas · TVN Chile</span><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 17px; line-height: 1.35; font-weight: 700">Latam-GPT: cómo es la primera inteligencia artificial 100% latinoamericana</span></div>
+</a>
+<a href="https://www.youtube.com/watch?v=laR0ThRc5KE" target="_blank" rel="noopener" class="cp-pop" style="display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; background: #11141E; border: 1px solid #232939; color: #F2F3F7; text-decoration: none">
+<div style="position: relative; aspect-ratio: 16 / 9; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #1A1F2E 0%, #7A1B45 100%)">
+<span style="position: absolute; left: 16px; top: 16px; padding: 4px 10px; border-radius: 999px; background: rgba(10,12,18,0.75); font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase">Entrevista</span>
+<span style="width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255,255,255,0.95)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="#F0217A"></path></svg></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 18px 20px 20px"><span style="font-size: 13px; font-weight: 600; color: #FF5C9E">24 Horas · TVN Chile</span><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 17px; line-height: 1.35; font-weight: 700">Gerente de CENIA sobre Latam-GPT: “Nosotros no venimos a competir”</span></div>
+</a>
+<a href="https://www.youtube.com/watch?v=cNnl4lgkgTw" target="_blank" rel="noopener" class="cp-pop-2" style="display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; background: #11141E; border: 1px solid #232939; color: #F2F3F7; text-decoration: none">
+<div style="position: relative; aspect-ratio: 16 / 9; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #F0217A 0%, #2A0E1D 100%)">
+<span style="position: absolute; left: 16px; top: 16px; padding: 4px 10px; border-radius: 999px; background: rgba(10,12,18,0.75); font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase">Entrevista</span>
+<span style="width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255,255,255,0.95)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="#F0217A"></path></svg></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 18px 20px 20px"><span style="font-size: 13px; font-weight: 600; color: #FF5C9E">Entrevista</span><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 17px; line-height: 1.35; font-weight: 700">Entrevista al equipo de CENIA: Latam-GPT, primer modelo de lenguaje latinoamericano</span></div>
+</a>
+<a href="https://www.youtube.com/shorts/-0yKoMj9LJ4" target="_blank" rel="noopener" class="cp-pop-3" style="display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; background: #11141E; border: 1px solid #232939; color: #F2F3F7; text-decoration: none">
+<div style="position: relative; aspect-ratio: 16 / 9; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #7A1B45 0%, #F0217A 100%)">
+<span style="position: absolute; left: 16px; top: 16px; padding: 4px 10px; border-radius: 999px; background: rgba(10,12,18,0.75); font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase">Short</span>
+<span style="width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255,255,255,0.95)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="#F0217A"></path></svg></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 18px 20px 20px"><span style="font-size: 13px; font-weight: 600; color: #FF5C9E">Short</span><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 17px; line-height: 1.35; font-weight: 700">Latam-GPT: una inteligencia artificial con voz latinoamericana</span></div>
+</a>
+</div>
+</section>
+
+<section id="webinars" class="r-pad" style="display: flex; flex-direction: column; gap: 28px; padding: 0 96px 96px">
+<div class="r-colhead" style="display: flex; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Space Mono', monospace; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; font-weight: 700; color: #FF5C9E">Próximos webinars · gratuitos</span><h2 class="cp-rv" style="margin: 0; font-size: 44px; line-height: 1.15; font-weight: 800; letter-spacing: -1px">Aprende con quienes la construyen</h2></div>
+<div style="display: flex; gap: 10px">
+<button type="button" id="web-prev" aria-label="Webinar anterior" style="width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 14px; border: 1px solid #3A4156; background: transparent; cursor: pointer"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16 10H4m5 5-5-5 5-5" stroke="#F2F3F7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+<button type="button" id="web-next" aria-label="Webinar siguiente" style="width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 14px; border: 0; background: #F0217A; cursor: pointer"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+</div>
+</div>
+<div class="cp-rv r-stack" style="gap: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); border-radius: 28px; background: #11141E; border: 1px solid #232939; overflow: hidden; min-height: 360px">
+<div class="r-webimg" style="grid-column: span 5; position: relative; min-height: 360px">
+<img data-slide-img="0" loading="lazy" src="img/conferencia.jpg" alt="Público en una charla de tecnología" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+<img data-slide-img="1" hidden loading="lazy" src="img/lupa.jpg" alt="Lupa sobre una cabeza con un objetivo" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+<img data-slide-img="2" hidden loading="lazy" src="img/docente-grupo.jpg" alt="Grupo de trabajo conversando" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+<span data-slide="tag" style="position: absolute; left: 22px; top: 22px; padding: 6px 14px; border-radius: 999px; background: #F0217A; color: #FFFFFF; font-size: 13px; font-weight: 600">Conoce el proyecto</span>
+<span class="r-webnum" style="position: absolute; right: 22px; bottom: 14px; font-family: 'Orbitron', sans-serif; font-size: 96px; font-weight: 800; line-height: 1; color: #F0217A; text-shadow: 0 4px 24px rgba(0,0,0,0.6)" data-slide="num">01</span>
+</div>
+<div class="r-inner" style="grid-column: span 7; display: flex; flex-direction: column; justify-content: center; gap: 18px; padding: 40px 48px">
+<h3 style="margin: 0; font-size: 30px; line-height: 1.25; font-weight: 800; letter-spacing: -0.5px" data-slide="title">Latam-GPT por dentro: cómo se construyó una IA con acento propio</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #A7AEBD" data-slide="desc">El equipo detrás del modelo cuenta cómo se entrenó con datos de la región y qué viene ahora.</p>
+<div class="r-wrap" style="display: flex; gap: 10px; font-size: 14px; font-weight: 600"><span style="padding: 8px 14px; border-radius: 10px; background: #1C2130">[FECHA]</span><span style="padding: 8px 14px; border-radius: 10px; background: #1C2130">[HORA] (Chile)</span><span style="padding: 8px 14px; border-radius: 10px; background: #1C2130">Online</span></div>
+<a href="#sumate" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 12px; background: #F0217A; color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 600">Inscribirme gratis</a>
+</div>
+</div>
+<div style="display: flex; justify-content: center; gap: 4px">
+<button type="button" class="webdot" data-go="0" aria-label="Ver webinar 1" style="height: 44px; min-width: 44px; display: flex; align-items: center; justify-content: center; background: transparent; border: 0; padding: 0; cursor: pointer"><span></span></button>
+<button type="button" class="webdot" data-go="1" aria-label="Ver webinar 2" style="height: 44px; min-width: 44px; display: flex; align-items: center; justify-content: center; background: transparent; border: 0; padding: 0; cursor: pointer"><span></span></button>
+<button type="button" class="webdot" data-go="2" aria-label="Ver webinar 3" style="height: 44px; min-width: 44px; display: flex; align-items: center; justify-content: center; background: transparent; border: 0; padding: 0; cursor: pointer"><span></span></button>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; background: linear-gradient(135deg, #2A0E1D 0%, #7A1B45 50%, #F0217A 100%)">
+<div class="r-pad" style="display: flex; flex-direction: column; align-items: center; gap: 36px; padding: 96px 96px 180px; text-align: center">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 12px"><h2 class="cp-rv" style="margin: 0; font-size: 44px; line-height: 1.15; font-weight: 800; letter-spacing: -1px">Lo que dicen quienes ya la probaron</h2><p style="margin: 0; max-width: 640px; font-size: 17px; line-height: 1.7; color: #F5D5E3">Personas de toda la región que pusieron a prueba a Latam-GPT con su forma de hablar.</p></div>
+<div class="r-g1" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; width: 100%; text-align: left">
+<div class="cp-pop" style="display: flex; flex-direction: column; gap: 14px; padding: 26px; border-radius: 20px; background: rgba(10,12,18,0.55); border: 1px solid rgba(255,255,255,0.15)"><div style="display: flex; align-items: center; gap: 14px"><span style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: #2A0E1D; border: 2px solid #F0217A; font-size: 12px; font-weight: 700">[AB]</span><div style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 700; font-size: 15px; color: #FF8CBA">[Nombre Apellido]</span><span style="font-size: 12px; color: #F5D5E3">[Estudiante de ingeniería · País]</span><span style="font-size: 13px; color: #FFD166; letter-spacing: 2px">★★★★★</span></div></div><p style="margin: 0; font-size: 15px; line-height: 1.6">[Testimonio real: qué le preguntó, qué le sorprendió y en qué se notó la diferencia.]</p></div>
+<div class="cp-pop-2" style="display: flex; flex-direction: column; gap: 14px; padding: 26px; border-radius: 20px; background: rgba(10,12,18,0.55); border: 1px solid rgba(255,255,255,0.15)"><div style="display: flex; align-items: center; gap: 14px"><span style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: #2A0E1D; border: 2px solid #F0217A; font-size: 12px; font-weight: 700">[CD]</span><div style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 700; font-size: 15px; color: #FF8CBA">[Nombre Apellido]</span><span style="font-size: 12px; color: #F5D5E3">[Desarrolladora · País]</span><span style="font-size: 13px; color: #FFD166; letter-spacing: 2px">★★★★★</span></div></div><p style="margin: 0; font-size: 15px; line-height: 1.6">[Testimonio real: qué le preguntó, qué le sorprendió y en qué se notó la diferencia.]</p></div>
+<div class="cp-pop-3" style="display: flex; flex-direction: column; gap: 14px; padding: 26px; border-radius: 20px; background: rgba(10,12,18,0.55); border: 1px solid rgba(255,255,255,0.15)"><div style="display: flex; align-items: center; gap: 14px"><span style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: #2A0E1D; border: 2px solid #F0217A; font-size: 12px; font-weight: 700">[EF]</span><div style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 700; font-size: 15px; color: #FF8CBA">[Nombre Apellido]</span><span style="font-size: 12px; color: #F5D5E3">[Funcionario de innovación · País]</span><span style="font-size: 13px; color: #FFD166; letter-spacing: 2px">★★★★★</span></div></div><p style="margin: 0; font-size: 15px; line-height: 1.6">[Testimonio real: qué le preguntó, qué le sorprendió y en qué se notó la diferencia.]</p></div>
+</div>
+</div>
+
+<div id="sumate" class="r-sumate" style="display: flex; justify-content: center; padding: 0 96px 96px; margin: 0 48px -1px; border-radius: 100px 100px 0 0; background: #0A0C12">
+<div class="cp-pop r-form" style="width: 1100px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); margin-top: -140px; border-radius: 28px; overflow: hidden; background: #11141E; border: 1px solid #F0217A; box-shadow: 0 30px 60px rgba(0,0,0,0.5)">
+<div class="r-formimg" style="grid-column: span 5; position: relative; min-height: 580px"><img loading="lazy" src="img/docente-grupo.jpg" alt="Grupo de trabajo conversando en torno a una mesa" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 40%; display: block">
+<div style="position: absolute; left: 22px; right: 22px; bottom: 22px; padding: 18px 20px; border-radius: 16px; background: rgba(10,12,18,0.88)"><span style="display: block; font-size: 18px; font-weight: 700; line-height: 1.3">Esto también lo podemos construir nosotros.</span><span style="font-size: 14px; color: #A7AEBD">Cuéntanos cómo quieres participar y el equipo del proyecto te contactará.</span></div>
+</div>
+<div class="r-inner" style="grid-column: span 7; padding: 40px 44px">
+<div id="form-wrap">
+<form id="sumate-form" style="display: flex; flex-direction: column; gap: 13px">
+<h3 style="margin: 0 0 4px; font-size: 26px; font-weight: 800">Súmate a Latam-GPT</h3>
+<div class="r-g1m" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="c-nombre" style="font-size: 13px; font-weight: 600">Nombre</label><input id="c-nombre" name="nombre" type="text" autocomplete="name" required="required" placeholder="Tu nombre" style="min-height: 48px; padding: 0 14px; border-radius: 12px; border: 1px solid #2A3042; background: #0A0C12; color: #F2F3F7; font-size: 15px; font-family: inherit"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="c-email" style="font-size: 13px; font-weight: 600">Correo electrónico</label><input id="c-email" name="email" type="email" autocomplete="email" required="required" placeholder="nombre@correo.com" style="min-height: 48px; padding: 0 14px; border-radius: 12px; border: 1px solid #2A3042; background: #0A0C12; color: #F2F3F7; font-size: 15px; font-family: inherit"></div>
+</div>
+<div class="r-g1m" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="c-tipo" style="font-size: 13px; font-weight: 600">Participo como</label>
+<select id="c-tipo" name="tipo" style="min-height: 48px; padding: 0 12px; border-radius: 12px; border: 1px solid #2A3042; background: #0A0C12; color: #F2F3F7; font-size: 15px; font-family: inherit">
+<option>Persona (estudiante, profesional)</option><option>Institución pública</option><option>Universidad o centro de investigación</option><option>Empresa o startup</option><option>Equipo de desarrollo</option><option>ONG o fundación</option>
+</select></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="c-org" style="font-size: 13px; font-weight: 600">Organización (opcional)</label><input id="c-org" name="organizacion" type="text" autocomplete="organization" placeholder="Nombre de tu organización" style="min-height: 48px; padding: 0 14px; border-radius: 12px; border: 1px solid #2A3042; background: #0A0C12; color: #F2F3F7; font-size: 15px; font-family: inherit"></div>
+</div>
+<div class="r-g1m" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="c-pais" style="font-size: 13px; font-weight: 600">País</label>
+<select id="c-pais" name="pais" style="min-height: 48px; padding: 0 12px; border-radius: 12px; border: 1px solid #2A3042; background: #0A0C12; color: #F2F3F7; font-size: 15px; font-family: inherit">
+<option>Chile</option><option>Argentina</option><option>Bolivia</option><option>Brasil</option><option>Colombia</option><option>Costa Rica</option><option>Ecuador</option><option>México</option><option>Panamá</option><option>Perú</option><option>Uruguay</option><option>Otro país</option>
+</select></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="c-como" style="font-size: 13px; font-weight: 600">Me interesa</label>
+<select id="c-como" name="interes" style="min-height: 48px; padding: 0 12px; border-radius: 12px; border: 1px solid #2A3042; background: #0A0C12; color: #F2F3F7; font-size: 15px; font-family: inherit">
+<option>Usarla y recibir novedades</option><option>Webinars y formación</option><option>Aportar datos</option><option>Proponer casos de uso</option><option>Investigación y evaluación</option><option>Integrar el modelo</option>
+</select></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="c-msg" style="font-size: 13px; font-weight: 600">Cuéntanos tu idea (opcional)</label><textarea id="c-msg" name="mensaje" rows="2" placeholder="Me gustaría usar Latam-GPT para…" style="padding: 12px 14px; border-radius: 12px; border: 1px solid #2A3042; background: #0A0C12; color: #F2F3F7; font-size: 15px; font-family: inherit; resize: vertical"></textarea></div>
+<label style="display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5"><input type="checkbox" name="novedades" style="margin: 2px 0 0; width: 18px; height: 18px; accent-color: #F0217A">Quiero recibir invitaciones a webinars y novedades por correo.</label>
+<label style="display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5"><input type="checkbox" name="privacidad" required="required" style="margin: 2px 0 0; width: 18px; height: 18px; accent-color: #F0217A"><span>Acepto la <a href="#faq">política de privacidad</a> y que me contacten.</span></label>
+<button type="submit" style="min-height: 54px; border: 0; border-radius: 12px; background: #F0217A; color: #FFFFFF; font-size: 16px; font-weight: 700; font-family: inherit; cursor: pointer">Quiero sumarme</button>
+</form>
+</div>
+<div id="form-thanks" hidden>
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding: 60px 0">
+<span style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: #F0217A"><svg width="28" height="28" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="m5 11.5 4 4 8-9" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+<h3 style="margin: 0; font-size: 28px; line-height: 1.2; font-weight: 800">¡Gracias por sumarte!</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #A7AEBD">Te escribiremos pronto. Mientras tanto, ponla a prueba con tu forma de hablar.</p>
+<a href="https://copuchat.latamgpt.org/?utm_source=landing&amp;utm_medium=web&amp;utm_campaign=ia-acento-propio&amp;utm_content=gracias" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; border-radius: 12px; background: #F0217A; color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 600">Entrar a Copuchat</a>
+<button type="button" id="form-reset" style="min-height: 44px; padding: 0; border: 0; background: transparent; color: #FF5C9E; font-size: 14px; font-weight: 600; font-family: inherit; text-decoration: underline; cursor: pointer">Volver al formulario</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="faq" class="r-pad r-stack" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 48px; padding: 72px 96px 96px">
+<div style="grid-column: span 4; display: flex; flex-direction: column; gap: 14px"><span style="font-family: 'Space Mono', monospace; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; font-weight: 700; color: #FF5C9E">FAQ</span><h2 class="cp-rv" style="margin: 0; font-size: 44px; line-height: 1.15; font-weight: 800; letter-spacing: -1px">Preguntas frecuentes</h2><p style="margin: 0; font-size: 15px; line-height: 1.7; color: #A7AEBD">¿Otra duda? Pregúntale al asistente en la esquina de la pantalla.</p></div>
+<div style="grid-column: span 8; display: flex; flex-direction: column; gap: 12px">
+<div class="faq open">
+<button type="button" class="faqbtn" aria-expanded="true" style="width: 100%; min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 22px; border: 0; background: transparent; color: #F2F3F7; font-size: 17px; font-weight: 600; font-family: inherit; text-align: left; cursor: pointer">¿Qué es Copuchat?<span class="faqicon">+</span></button>
+<p class="faqa" style="margin: 0; padding: 0 22px 22px; font-size: 15px; line-height: 1.7; color: #A7AEBD">La plataforma y comunidad donde conversas con Latam-GPT, la primera IA de lenguaje abierta hecha por y para Latinoamérica. Tus conversaciones ayudan a mejorarla.</p>
+</div>
+<div class="faq">
+<button type="button" class="faqbtn" aria-expanded="false" style="width: 100%; min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 22px; border: 0; background: transparent; color: #F2F3F7; font-size: 17px; font-weight: 600; font-family: inherit; text-align: left; cursor: pointer">¿Es gratis?<span class="faqicon">+</span></button>
+<p class="faqa" hidden style="margin: 0; padding: 0 22px 22px; font-size: 15px; line-height: 1.7; color: #A7AEBD">Sí. Conversar con Latam-GPT en Copuchat y participar en los webinars es gratuito.</p>
+</div>
+<div class="faq">
+<button type="button" class="faqbtn" aria-expanded="false" style="width: 100%; min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 22px; border: 0; background: transparent; color: #F2F3F7; font-size: 17px; font-weight: 600; font-family: inherit; text-align: left; cursor: pointer">¿En qué se diferencia de ChatGPT o Gemini?<span class="faqicon">+</span></button>
+<p class="faqa" hidden style="margin: 0; padding: 0 22px 22px; font-size: 15px; line-height: 1.7; color: #A7AEBD">Latam-GPT se entrenó con foco en datos de América Latina y el Caribe, es abierta y se desarrolla en la región. ChatGPT y Gemini tienen más funciones generales, como imágenes y voz; Copuchat se enfoca en entender nuestro contexto.</p>
+</div>
+<div class="faq">
+<button type="button" class="faqbtn" aria-expanded="false" style="width: 100%; min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 22px; border: 0; background: transparent; color: #F2F3F7; font-size: 17px; font-weight: 600; font-family: inherit; text-align: left; cursor: pointer">¿Qué pasa con mis datos?<span class="faqicon">+</span></button>
+<p class="faqa" hidden style="margin: 0; padding: 0 22px 22px; font-size: 15px; line-height: 1.7; color: #A7AEBD">En Copuchat se recolecta lo que escribes, las respuestas del modelo y datos técnicos básicos. Todo se anonimiza y se usa para investigación y desarrollo de Latam-GPT. Evita escribir datos personales.</p>
+</div>
+<div class="faq">
+<button type="button" class="faqbtn" aria-expanded="false" style="width: 100%; min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 22px; border: 0; background: transparent; color: #F2F3F7; font-size: 17px; font-weight: 600; font-family: inherit; text-align: left; cursor: pointer">¿Quién está detrás?<span class="faqicon">+</span></button>
+<p class="faqa" hidden style="margin: 0; padding: 0 22px 22px; font-size: 15px; line-height: 1.7; color: #A7AEBD">Una alianza de más de 60 instituciones de 15 países, con liderazgo técnico de CENIA y el impulso del Ministerio de Ciencia de Chile y CAF.</p>
+</div>
+<div class="faq">
+<button type="button" class="faqbtn" aria-expanded="false" style="width: 100%; min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 22px; border: 0; background: transparent; color: #F2F3F7; font-size: 17px; font-weight: 600; font-family: inherit; text-align: left; cursor: pointer">¿Mi institución puede sumarse?<span class="faqicon">+</span></button>
+<p class="faqa" hidden style="margin: 0; padding: 0 22px 22px; font-size: 15px; line-height: 1.7; color: #A7AEBD">Sí. Completa el formulario “Súmate a Latam-GPT” indicando tu organización y el equipo del proyecto te contactará.</p>
+</div>
+</div>
+</section>
+
+<footer class="r-footer" style="flex-grow: 1; display: flex; align-items: center; justify-content: space-between; padding: 32px 96px; background: #07080D; border-top: 1px solid #232939; font-size: 14px; color: #A7AEBD">
+<div style="display: flex; align-items: center; gap: 12px"><span style="font-family: 'Orbitron', sans-serif; font-size: 18px; font-weight: 900; color: #F0217A">COPUCHAT</span><span>Impulsada por Latam-GPT · Liderazgo técnico de CENIA</span></div>
+<div style="display: flex; align-items: center; gap: 10px">
+<a href="https://www.instagram.com/cenia_cl" target="_blank" rel="noopener" aria-label="Instagram de CENIA" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: #161A27; border: 1px solid #2A3042"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="#F2F3F7" stroke-width="2"></rect><circle cx="12" cy="12" r="4" stroke="#F2F3F7" stroke-width="2"></circle><circle cx="17.2" cy="6.8" r="1.2" fill="#F2F3F7"></circle></svg></a>
+<a href="https://cl.linkedin.com/company/cenia-cl" target="_blank" rel="noopener" aria-label="LinkedIn de CENIA" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: #161A27; border: 1px solid #2A3042"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" stroke="#F2F3F7" stroke-width="2"></rect><path d="M8 10.5V16M8 7.8v.2M12 16v-5.5M12 13c0-1.7 1-2.7 2.3-2.7S16 11.2 16 13v3" stroke="#F2F3F7" stroke-width="2" stroke-linecap="round"></path></svg></a>
+<a href="https://twitter.com/cen_ia" target="_blank" rel="noopener" aria-label="X (Twitter) de CENIA" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: #161A27; border: 1px solid #2A3042"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4l16 16M20 4 4 20" stroke="#F2F3F7" stroke-width="2.2" stroke-linecap="round"></path></svg></a>
+<a href="https://www.youtube.com/@CEN_IA" target="_blank" rel="noopener" aria-label="YouTube de CENIA" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: #161A27; border: 1px solid #2A3042"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4" stroke="#F2F3F7" stroke-width="2"></rect><path d="M10 9.5v5l4.5-2.5L10 9.5Z" fill="#F2F3F7"></path></svg></a>
+<a href="https://cenia.cl/" target="_blank" rel="noopener" aria-label="Sitio web de CENIA" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: #161A27; border: 1px solid #2A3042"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#F2F3F7" stroke-width="2"></circle><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" stroke="#F2F3F7" stroke-width="2"></path></svg></a>
+</div>
+</footer>
+
+<div class="r-chatpos" style="position: fixed; right: 24px; bottom: 24px; z-index: 30; display: flex; flex-direction: column; align-items: flex-end; gap: 12px">
+<div class="r-chat" id="chat-panel" hidden style="width: 360px; display: flex; flex-direction: column; background: #11141E; border: 1px solid #232939; border-radius: 22px; box-shadow: 0 24px 60px rgba(0,0,0,0.6); overflow: hidden">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 14px 12px 16px; background: linear-gradient(135deg, #7A1B45 0%, #F0217A 100%)"><span style="font-weight: 700; font-size: 15px">Asistente Copuchat</span><button type="button" id="chat-close" aria-label="Cerrar asistente" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border: 0; background: transparent; cursor: pointer"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 5l10 10M15 5 5 15" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"></path></svg></button></div>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 16px; background: #0A0C12">
+<div style="align-self: flex-start; max-width: 88%; padding: 10px 12px; border-radius: 14px 14px 14px 4px; background: #1C2130; font-size: 14px; line-height: 1.5">¡Hola! ¿En qué te ayudo?</div>
+<div id="chat-answer" hidden style="display: flex; flex-direction: column; gap: 10px">
+<div style="align-self: flex-end; max-width: 80%; padding: 10px 12px; border-radius: 14px 14px 4px 14px; background: #F0217A; font-size: 14px; line-height: 1.5" id="chat-q"></div>
+<div style="align-self: flex-start; max-width: 88%; padding: 10px 12px; border-radius: 14px 14px 14px 4px; background: #1C2130; font-size: 14px; line-height: 1.5" id="chat-a"></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" class="chatq" data-q="0" style="min-height: 44px; padding: 0 12px; border-radius: 999px; border: 1px solid #F0217A; background: transparent; color: #FF8CBA; font-size: 13px; font-weight: 600; font-family: inherit; cursor: pointer">¿Qué es Copuchat?</button>
+<button type="button" class="chatq" data-q="1" style="min-height: 44px; padding: 0 12px; border-radius: 999px; border: 1px solid #F0217A; background: transparent; color: #FF8CBA; font-size: 13px; font-weight: 600; font-family: inherit; cursor: pointer">¿Es gratis?</button>
+<button type="button" class="chatq" data-q="2" style="min-height: 44px; padding: 0 12px; border-radius: 999px; border: 1px solid #F0217A; background: transparent; color: #FF8CBA; font-size: 13px; font-weight: 600; font-family: inherit; cursor: pointer">Soy una institución</button>
+<button type="button" class="chatq" data-q="3" style="min-height: 44px; padding: 0 12px; border-radius: 999px; border: 1px solid #F0217A; background: transparent; color: #FF8CBA; font-size: 13px; font-weight: 600; font-family: inherit; cursor: pointer">¿Mis datos?</button>
+</div>
+</div>
+</div>
+<button type="button" id="chat-toggle" aria-expanded="false" aria-label="Abrir asistente" style="display: flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 20px 0 12px; border-radius: 999px; border: 0; background: #F0217A; color: #FFFFFF; font-size: 15px; font-weight: 600; font-family: inherit; box-shadow: 0 12px 30px rgba(240,33,122,0.4); cursor: pointer">
+<span style="width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: #0A0C12"><svg width="18" height="18" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M6 9.5C6 7.6 7.6 6 9.5 6h21C32.4 6 34 7.6 34 9.5v14c0 1.9-1.6 3.5-3.5 3.5H18l-8 7v-7h-.5C7.6 27 6 25.4 6 23.5v-14Z" fill="#F0217A"></path></svg></span>
+<span id="chat-label">¿Dudas? Pregúntanos</span>
+</button>
+</div>
+
+</div>
+<script>
+(function(){
+var slides=[{num:'01',tag:'Conoce el proyecto',title:'Latam-GPT por dentro: cómo se construyó una IA con acento propio',desc:'El equipo detrás del modelo cuenta cómo se entrenó con datos de la región y qué viene ahora.'},{num:'02',tag:'Para usuarios de IA',title:'Prompts con contexto latinoamericano: saca más de la IA',desc:'Aprende a pedirle a la IA respuestas que entiendan tu país, tu trabajo y tu forma de hablar.'},{num:'03',tag:'Devs e instituciones',title:'Cómo sumarse a Latam-GPT: integrar, aportar datos y colaborar',desc:'Para desarrolladores, universidades e instituciones públicas que quieren ser parte del proyecto abierto.'}], bot=[{q:'¿Qué es Copuchat?',a:'La comunidad donde conversas con Latam-GPT, la primera IA abierta hecha por y para Latinoamérica.'},{q:'¿Es gratis?',a:'Sí, conversar en Copuchat es gratis y no necesitas instalar nada.'},{q:'Soy una institución',a:'Completa el formulario “Súmate a Latam-GPT” y el equipo del proyecto te contactará.'},{q:'¿Mis datos?',a:'Las conversaciones se anonimizan y se usan para investigación. Evita escribir datos personales.'}];
+document.querySelectorAll('.tabbtn').forEach(function(b){b.addEventListener('click',function(){
+ document.querySelectorAll('.tabbtn').forEach(function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-selected',on)});
+ document.querySelectorAll('[data-panel]').forEach(function(p){p.hidden=p.getAttribute('data-panel')!==b.getAttribute('data-tab')});});});
+var cur=0,timer;
+function show(i){cur=(i+3)%3;var s=slides[cur];
+ document.querySelectorAll('[data-slide]').forEach(function(el){el.textContent=s[el.getAttribute('data-slide')]});
+ document.querySelectorAll('[data-slide-img]').forEach(function(im){im.hidden=+im.getAttribute('data-slide-img')!==cur});
+ document.querySelectorAll('.webdot').forEach(function(d,j){d.classList.toggle('on',j===cur)});}
+function restart(){clearInterval(timer);timer=setInterval(function(){show(cur+1)},6000)}
+document.getElementById('web-prev').addEventListener('click',function(){show(cur-1);restart()});
+document.getElementById('web-next').addEventListener('click',function(){show(cur+1);restart()});
+document.querySelectorAll('.webdot').forEach(function(d){d.addEventListener('click',function(){show(+d.getAttribute('data-go'));restart()})});
+show(0);restart();
+var f=document.getElementById('sumate-form');
+f.addEventListener('submit',function(e){e.preventDefault();document.getElementById('form-wrap').hidden=true;document.getElementById('form-thanks').hidden=false;});
+document.getElementById('form-reset').addEventListener('click',function(){f.reset();document.getElementById('form-wrap').hidden=false;document.getElementById('form-thanks').hidden=true;});
+document.querySelectorAll('.faqbtn').forEach(function(b){b.addEventListener('click',function(){
+ var box=b.parentNode,open=!box.classList.contains('open');
+ document.querySelectorAll('.faq').forEach(function(x){x.classList.remove('open');x.querySelector('.faqa').hidden=true;x.querySelector('.faqbtn').setAttribute('aria-expanded','false')});
+ if(open){box.classList.add('open');box.querySelector('.faqa').hidden=false;b.setAttribute('aria-expanded','true')}});});
+var panel=document.getElementById('chat-panel'),tog=document.getElementById('chat-toggle');
+function chat(o){panel.hidden=!o;tog.setAttribute('aria-expanded',o);tog.setAttribute('aria-label',o?'Cerrar asistente':'Abrir asistente');document.getElementById('chat-label').textContent=o?'Cerrar':'¿Dudas? Pregúntanos';}
+tog.addEventListener('click',function(){chat(panel.hidden)});
+document.getElementById('chat-close').addEventListener('click',function(){chat(false)});
+document.querySelectorAll('.chatq').forEach(function(b){b.addEventListener('click',function(){var x=bot[+b.getAttribute('data-q')];document.getElementById('chat-q').textContent=x.q;document.getElementById('chat-a').textContent=x.a;document.getElementById('chat-answer').hidden=false;})});
+})();
+</script>
+</body>
+</html>
